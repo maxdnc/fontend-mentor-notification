@@ -1,0 +1,238 @@
+// Colors //
+
+//Primary//
+$Red: hsl(1, 90%, 64%);
+$Blue: hsl(219, 78%, 34%);
+
+//Neutral//
+
+$White: hsl(0, 0%, 100%);
+$Very-light-grayish-blue: hsl(210, 60%, 98%);
+$Light-grayish-blue-1: hsl(211, 68%, 94%);
+$Light-grayish-blue-2: hsl(205, 33%, 90%);
+$Grayish-blue: hsl(219, 14%, 63%);
+$Dark-grayish-blue: hsl(219, 12%, 42%);
+$Very-dark-blue: hsl(224, 21%, 14%);
+
+// Reset //
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+//font //
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap");
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  margin: auto;
+  background: $Very-light-grayish-blue;
+}
+
+p {
+  font-size: 1rem;
+  color: $Dark-grayish-blue;
+  line-height: 1.3;
+}
+
+h1 {
+  color: $Very-dark-blue;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+//mobile //
+main {
+  width: 100%;
+  margin: 1rem;
+  background: white;
+  margin: auto;
+  border-radius: 1rem;
+  max-width: 46.25rem;
+}
+
+// head //
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  padding: 1rem 0;
+}
+
+.count-notifications {
+  display: inline-block;
+  background: $Blue;
+  color: $White;
+  border-radius: 0.5rem;
+  padding: 0 0.7rem;
+  margin: 0 0.5rem;
+}
+.mark-as-read {
+  background-color: transparent;
+  border-width: 0;
+
+  font-size: 0.95rem;
+  font-style: inherit;
+  font-weight: 500;
+  line-height: inherit;
+  letter-spacing: small;
+  padding: 0;
+  color: $Grayish-blue;
+  cursor: pointer;
+  &:hover {
+    color: $Blue;
+  }
+}
+
+// main notif //
+
+.panel-notif {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.panel-notif li {
+  list-style: none;
+  padding: 1rem 0rem;
+  margin: 0 1rem;
+  border-radius: 1rem;
+  display: flex;
+}
+
+.panel-notif .photo-profil {
+  height: 2.5rem;
+  width: auto;
+  margin: 0 1rem;
+}
+
+.panel-notif .name {
+  text-decoration: none;
+  color: $Very-dark-blue;
+  font-weight: 800;
+}
+
+.panel-notif .groupe {
+  text-decoration: none;
+  color: $Blue;
+  font-weight: 800;
+}
+.panel-notif .activity {
+  text-decoration: none;
+  color: $Dark-grayish-blue;
+  font-weight: 800;
+  &:hover {
+    color: $Blue;
+  }
+}
+.panel-notif .time {
+  color: $Grayish-blue;
+  font-size: 1rem;
+}
+
+.panel-notif .sectiontext {
+  flex-grow: 1;
+  margin-right: 0.5rem;
+}
+
+.panel-notif .private-msg {
+  display: inline-block;
+  border: 1px solid $Light-grayish-blue-2;
+  border-radius: 0.5rem;
+  margin: 0.2rem 1.5rem 0 0;
+  padding: 0.8rem;
+  line-height: 1.35;
+  color: $Grayish-blue;
+  font-size: 0.9rem;
+  cursor: pointer;
+  &:hover {
+    background-color: $Light-grayish-blue-1;
+  }
+}
+
+.panel-notif .chessimg {
+  height: 2.5rem;
+  width: auto;
+}
+
+// if read //
+.active {
+  background: $Very-light-grayish-blue;
+  cursor: pointer;
+}
+.active .red-dot {
+  display: inline-block;
+  background-color: $Red;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 0.5rem;
+  margin: 0 0.4rem;
+}
+
+@media screen and(min-width: 800px) {
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+  .head {
+    margin: 1.5rem 2rem;
+  }
+
+  h1 {
+    color: $Very-dark-blue;
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+  .mark-as-read {
+    font-size: 1rem;
+    letter-spacing: normal;
+  }
+
+  .panel-notif li {
+    margin: 0 2rem;
+  }
+}
